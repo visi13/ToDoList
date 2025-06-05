@@ -16,8 +16,8 @@ function renderTasks() {
     li.innerHTML = `
       <span>${task.text}</span>
       <div>
-        <button onclick="toggleDone(${index})">✔️</button>
-        <button onclick="deleteTask(${index})">🗑️</button>
+        <button onclick="toggleDone(${index})">✅</button>
+        <button onclick="deleteTask(${index})">❌</button>
       </div>
     `;
     list.appendChild(li);
@@ -26,7 +26,9 @@ function renderTasks() {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  tasks.push({ text: input.value, done: false });
+  const text = input.value.trim();
+  if (!text) return;
+  tasks.push({ text, done: false });
   input.value = '';
   saveTasks();
   renderTasks();
