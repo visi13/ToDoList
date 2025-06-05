@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
